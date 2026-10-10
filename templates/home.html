@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Welcome to BrewSite</h1>
+<p>BrewSite is a Flask web app that shows brewery information from the Open Brewery DB API.</p>
+<p>Built by Lisvaldo Liz for ICT 362 at NMSU.</p>
+<p>Click Breweries above to see breweries across New Mexico with their type, address, phone, and website.</p>
+<img src="{{ url_for('static', filename='images/brew1.jpg') }}" alt="Brewery photo 1" width="300" height="200" style="object-fit: cover;">
+<img src="{{ url_for('static', filename='images/brew2.jpg') }}" alt="Brewery photo 2" width="300" height="200" style="object-fit: cover;">
+<img src="{{ url_for('static', filename='images/brew3.jpg') }}" alt="Brewery photo 3" width="300" height="200" style="object-fit: cover;">
+{% endblock %}
