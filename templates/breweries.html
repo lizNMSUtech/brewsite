@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Breweries{% endblock %}
+{% block content %}
+<h1>New Mexico Breweries</h1>
+<table border="1" cellpadding="6">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Website</th>
+    </tr>
+    {% for brewery in breweries %}
+    <tr>
+        <td>{{ brewery.name }}</td>
+        <td>{{ brewery.brewery_type }}</td>
+        <td>{{ brewery.address_1 or "" }}</td>
+        <td>{{ brewery.city }}</td>
+        <td>{{ brewery.phone or "" }}</td>
+        <td>{% if brewery.website_url %}<a href="{{ brewery.website_url }}">{{ brewery.website_url }}</a>{% endif %}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
